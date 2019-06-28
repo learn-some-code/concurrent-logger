@@ -6,14 +6,14 @@ Includes a CSV file writer. Can be extended to write to a database, TCP stream, 
 ## Example
 
 ```csharp
-	Logger log = new Logger("mainlog", new LogCSVFileWriter());
-	log.Start();
-	// ...
-	log.Record("a new log entry");			// To default
-	log.Record("another log entry");		// To default
-	log.RecordTo("errorlog", "found an error");	// To errorlog
-	// ...
-	log.Stop();
+Logger log = new Logger("mainlog", new LogCSVFileWriter());
+log.Start();
+// ...
+log.Record("a new log entry");			// To default
+log.Record("another log entry");		// To default
+log.RecordTo("errorlog", "found an error");	// To errorlog
+// ...
+log.Stop();
 ```
 
 ### CSV output
@@ -40,21 +40,21 @@ You can add extra information by writing extension structs or classes that inher
 For example, if you want to include a message type, you can do this:
 
 ```csharp
-	public enum LogType
-	{ General, Error, Exception };
+public enum LogType
+{ General, Error, Exception };
 
-	public struct LogEntryType : ILogEntryExt
-	{
-		public LogType Type;
-		
-		public LogEntryType(LogType type) { Type = type; }
-		public string ToCSV() {	return (Type.ToString()); }
-	}
+public struct LogEntryType : ILogEntryExt
+{
+	public LogType Type;
+
+	public LogEntryType(LogType type) { Type = type; }
+	public string ToCSV() {	return (Type.ToString()); }
+}
 ```
 
 ```csharp
-	log.Record("connection established", new LogEntryType(LogType.General));
-	log.Record("access denied", new LogEntryType(LogType.Error));
+log.Record("connection established", new LogEntryType(LogType.General));
+log.Record("access denied", new LogEntryType(LogType.Error));
 ```
 
 ### CSV output
