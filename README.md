@@ -1,6 +1,6 @@
 # ConcurrentLogger
 
-A small efficient library for concurrent logging in C#
+A small efficient library for concurrent logging in C#.\
 Includes a CSV file writer. Can be extended to write to a database, TCP stream, text file, etc.
 
 ## Example
@@ -36,7 +36,7 @@ By default a log entry contains the following information:
 - Calling method
 - Source file path
 
-You can add extra information by writing extension structs or classes that inherit from ILogEntryExt
+You can add extra information by writing extension structs or classes that inherit from ILogEntryExt.\
 For example, if you want to include a message type, you can do this:
 
 ```csharp
