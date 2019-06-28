@@ -3,6 +3,9 @@
 A small efficient library for concurrent logging in C#.\
 Includes a CSV file writer. Can be extended to write to a database, TCP stream, text file, etc.
 
+## NuGet package
+[Get it here](https://www.nuget.org/packages/ConcurrentLogger/)
+
 ## Example
 
 ```csharp
