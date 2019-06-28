@@ -9,9 +9,9 @@ Includes a CSV file writer. Can be extended to write to a database, TCP stream, 
 	Logger log = new Logger("mainlog", new LogCSVFileWriter());
 	log.Start();
 	// ...
-	log.Record("a new log entry");					// To default
-	log.Record("another log entry");				// To default
-	log.RecordTo("errorlog", "found an error");		// To errorlog
+	log.Record("a new log entry");			// To default
+	log.Record("another log entry");		// To default
+	log.RecordTo("errorlog", "found an error");	// To errorlog
 	// ...
 	log.Stop();
 ```
