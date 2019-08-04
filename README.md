@@ -3,7 +3,8 @@
 A small efficient library for concurrent logging in C#.\
 Includes a CSV file writer. Can be extended to write to a database, TCP stream, text file, etc.
 
-## NuGet package
+## NuGet Package
+
 [Get it here](https://www.nuget.org/packages/ConcurrentLogger/)
 
 ## Example
@@ -19,7 +20,7 @@ log.RecordTo("errorlog", "found an error");	// To errorlog
 log.Stop();
 ```
 
-### CSV output
+**CSV Output:**
 
 | mainlog-2019-06-28.csv    |                   |     |      |                       |
 | ------------------------- | ----------------- | --- | ---- | --------------------- |
@@ -60,7 +61,7 @@ log.Record("connection established", new LogEntryType(LogType.General));
 log.Record("access denied", new LogEntryType(LogType.Error));
 ```
 
-### CSV output
+**CSV Output:**
 
 | mainlog-2019-06-28.csv    |                        |         |     |      |                       |
 | ------------------------- | -----------------------|---------| --- | ---- | --------------------- |
